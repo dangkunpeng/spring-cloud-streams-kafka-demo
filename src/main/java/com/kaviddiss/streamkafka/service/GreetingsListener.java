@@ -13,5 +13,6 @@ public class GreetingsListener {
     @StreamListener(GreetingsStreams.INPUT)
     public void handleGreetings(@Payload Greetings greetings) {
         log.info("Received greetings: {}", greetings);
+        log.info("COST:{}", System.currentTimeMillis() - greetings.getTimestamp());
     }
 }
